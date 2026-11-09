@@ -10,7 +10,7 @@ from dataclasses import dataclass, asdict
 from difflib import get_close_matches
 from pathlib import Path
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 # Official frontmatter keys from https://agentskills.io/specification
 # as fetched on 9 Nov 2026. hyphenated allowed-tools is the published name.

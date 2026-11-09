@@ -8,8 +8,13 @@ description so vague that the agent never triggers the skill.
 
 ## Install
 
+Python 3.10 or later.
+
+From a checkout:
+
 ```bash
-python3 -m pip install -e .
+python3 -m pip install .
+python3 -m pip install -e ".[dev]"  # optional, for tests
 skilldoctor path/to/skill
 ```
 
@@ -47,3 +52,21 @@ Field names and constraints follow the public Agent Skills specification
 (fetched 9 Nov 2026). The typo and trigger-quality checks were motivated by
 public reports of silent frontmatter failures and of vague descriptions that
 never loaded. No linter source was copied.
+
+## Limits
+
+- The frontmatter parser is intentionally small: a flat YAML map plus one level of nested `metadata:` keys. It is not a full YAML parser.
+- Field names and length limits follow the public Agent Skills specification as fetched on 9 Nov 2026. The spec may change.
+- A clean report means the file matches those checks, not that the skill is safe to run. Use skillguard for a static security pass.
+
+From GitHub you can also install with:
+
+```bash
+python3 -m pip install git+https://github.com/perron/skilldoctor.git
+```
+
+This package is not published to PyPI.
+
+## License
+
+MIT. See `LICENSE`. Please read `SECURITY.md` before filing a vulnerability report.
